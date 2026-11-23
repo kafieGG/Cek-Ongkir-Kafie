@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title> Rasberry pie </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="kotak-ongkir">
+            <h1>Cek Tarif Pengiriman </h1>
+            <p> Pilih wilayah tujuan Pengiriman paket: </p>
+
+            <select id="tujuan">
+                <option value="dalam_kota">Dalam_Kota (Yogyakarta)</option>
+                <option value="luar_kota">Luar_Kota (Pulau Jawa)</option>
+                <option value="luar_pulau">Luar_Pulau Jawa</option>
+                <option value="luar_negeri">Luar Negeri (Asia)</option>
+            </select>
+            <br><br>
+
+            <button onclick="cekOngkir()">
+                Cek Tarif
+            </button>
+
+            <h2 id="hasilOngkir">
+                Silakan pilih tujuan pengiriman.
+            </h2>
+        </div>
+        <script>
+            function cekOngkir() {
+                let wilayah =
+                document.getElementById("tujuan"). value;
+                let infoTarif = "";
+                if (wilayah == "dalam_kota") {
+                    infoTarif = "Tarif: Rp 10.000 (Estimasi 1 hari)";
+                }
+                else if (wilayah == "luar_kota") {
+                    infoTarif = "Tarif: Rp 20.000 (Estimasi 2-3 hari)";
+                }
+                else if (wilayah == "luar_pulau") {
+                    infoTarif = "Tarif: Rp 45.000 (Estimasi 4-7 hari)";
+                }
+                else if (wilayah == "luar_negeri") {
+                    infoTarif = "Tarif: 150.000 (Estimasi 7-14 hari)";
+                }
+                document.getElementById("hasilOngkir").innerText = infoTarif 
+            }
+        </script>
+    </body>
+</html>
